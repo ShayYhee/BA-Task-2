@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews Predictions</title>
+</head>
+
+<body>
+    <h1>BA Customer Reviews Predictions</h1>
+    <form action="/predict" method="post">
+        <label for="route">Route:</label>
+        <input type="text" name="route" required>
+        <br>
+        <label for="bkOrg">Booking Origin:</label>
+        <input type="text" name="bkOrg" required>
+        <br>
+        <label for="flDur">Flight Duration:</label>
+        <input type="text" name="flDur" required>
+        <br>
+        <label for="exBagg">Extra Baggage:</label>
+        <input type="text" name="exBagg" required>
+        <br>
+        <label for="lenStay">Length of Stay:</label>
+        <input type="text" name="lenStay" required>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+
+</html>
